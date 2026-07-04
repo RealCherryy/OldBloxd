@@ -1,15 +1,1 @@
-/* Background */
 
-.HomePageBackgroundContainer {
-    background-color: #3b0000 !important;
-    background-image: url(https://iili.io/KYPmsSf.jpg) !important;
-    background-size: cover !important;
-    background-position: center !important;
-    background-repeat: no-repeat !important;
-    filter: blur(2px) !important;
-}
-
-.HomePageBackground {
-    height: 0rem !important;
-    filter: none !important;
-}
