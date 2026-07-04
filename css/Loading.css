@@ -1,7 +1,1 @@
-.LoadingOverlay {
-    display: flex !important;
-    flex-direction: column !important;
-    background-image: radial-gradient(circle, rgb(38, 113, 215), rgb(34, 40, 59)) rgb(0, 0, 0) !important;
-    background-color: #00000000 !important;
-    opacity: 0.9 !important;
-}
+
