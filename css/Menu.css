@@ -1,0 +1,111 @@
+.ThumbnailBadgesContainer .ThumbnailBadgeContainer .ThumbnailBadgeMain {
+  background: #00000000 !important;
+  width: 0rem !important;
+  font-size: 2 !important;
+  color: #00000000 !important;
+  box-shadow: 0 0 #00000000 !important;
+}
+
+.GameCardContainer .AvailableGame .AvailableGameInner {
+  align-items: stretch !important;
+  display: flex !important;
+}
+
+.AvailableGameTextWrapper {
+  border-radius: 0 0 10px 10px !important;
+  overflow: hidden !important;
+  display: block !important;
+}
+
+.AvailableGame {
+  box-shadow: 0 0 30px rgb(0 0 0 / 40%);
+}
+
+.GameCardContainer .AvailableGame{
+  border-radius:10px!important;
+}
+
+.CenteredDiv .CenteredDivMiddle .TopCustomGameList .TopCustomGameListTitle {
+    width: 0% !important;
+    height: 0% !important;
+    background: none !important;
+    color: #00000000 !important;
+    font-size: 0px !important;
+    border: none !important;
+    padding: 0px !important;
+    transition: none !important;
+    text-shadow: 0 0 BLACK !important;
+}
+
+.CenteredDiv {
+    overflow: hidden !important;
+    height: 45vw !important;
+}
+
+.CenteredDiv .CenteredDivMiddle {
+    gap: 300rem !important;
+    height: 45vw !important;
+    overflow: hidden !important;
+    flex-grow: 0 !important;
+}
+
+.TopCustomGameList {
+    width: stretch !important;
+}
+
+.RecentlyPlayedGameList {
+    display: none !important;
+}
+
+.AvailableGameChipList{
+  border-radius: 10px !important;
+}
+
+.HomeHeaderRight{
+  border-radius: 10px !important;
+}
+
+.PlayerNamePreview{
+  border-radius: 10px !important;
+}
+
+
+.LinksButton{
+width: 0px;
+height: 0px;
+opacity: 0;
+}
+
+.InvenItem{
+   border-radius: 10px !important;
+}
+
+.InvenItem.Selected{
+  border-radius: 10px !important;
+}
+
+
+.CustomTextureFolderUploadIcon {
+    color: #00000000 !important;
+    font-size: 3rem !important;
+    text-shadow: none!important;
+    background-image: url(https://i.postimg.cc/9fWVrxX0/bloxd-Alogo.jpg) !important;
+    background-size: contain !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    image-rendering: pixelated !important;
+    width: 5rem !important;
+}
+
+.HomePage .HomePageInner .HomePageInnerLeft {
+    order: 2;
+}
+
+.HomePage .HomePageInner .HomePageInnerRight {
+    order: 1;
+}
+
+.HomePage .SocialBarContainer .SocialBar {
+    left: auto !important;
+    right: 0 !important;
+}
