@@ -58,6 +58,26 @@ body{
 .RecentlyPlayedGameList {
     display: none !important;
 }
+.HomePageBackgroundContainer {
+    background-color: #000000 !important;
+    background-image: url(https://i.postimg.cc/HLYYCCYg/bg-bloxd.png) !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+}
 
-    background-image: url(https://raw.githubusercontent.com/RealCherryy/OldBloxd/refs/heads/main/Screenshot%202026-07-04%20202007.png);
+.HomePageBackground {
+    height: 0rem !important;
+    filter: none !important;
+}
+.SocialBarContainer .SocialBarOuter .SocialBar .SocialBarInner {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.SocialBarContainer .SocialBarOuter .SocialBar .SocialBarInner .SocialBarBody {
+    width: auto;
+    align-self: flex-end; /* ensures it moves right */
+}
 }
