@@ -70,16 +70,6 @@ body{
     height: 0rem !important;
     filter: none !important;
 }
-.SocialBarContainer .SocialBarOuter .SocialBar .SocialBarInner {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-}
-
-.SocialBarContainer .SocialBarOuter .SocialBar .SocialBarInner .SocialBarBody {
-    width: auto;
-    align-self: flex-end; /* ensures it moves right */
-}
 .HomePageFooter{
   display: none;
 }
@@ -98,21 +88,5 @@ body{
 }
 .AdBanner.SuperRankAd.SuperRankAd970x250.AdBannerExtraContrast {
     display: none !important;
-}
-.SocialBarContainer {
-    position: absolute !important;
-    right: 0 !important;
-    top: 0 !important;
-    height: auto !important;
-    width: var(--collapsed-width) !important;
-    z-index: 15 !important;
-}
-
-/* Keep the bar itself aligned */
-.SocialBarContainer .SocialBarOuter,
-.SocialBarContainer .SocialBarOuter .SocialBar,
-.SocialBarContainer .SocialBarOuter .SocialBar .SocialBarInner {
-    width: var(--collapsed-width) !important;
-    margin-left: auto !important;
 }
 } 
