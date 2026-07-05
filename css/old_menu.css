@@ -80,4 +80,13 @@ body{
     width: auto;
     align-self: flex-end; /* ensures it moves right */
 }
+.HomePageFooter{
+  display: none;
 }
+.AdBanner{
+  display: none;
+}
+.NewButton.BlueButton.LinksButton {
+    display: none !important;
+}
+} 
