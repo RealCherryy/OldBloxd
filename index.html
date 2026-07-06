@@ -1,0 +1,52 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OG Bloxd</title>
+  
+<!-- Test website just to be easier to develop in it o_o -->
+
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-image: url("Assets/Background-Image.png") ;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    .download-btn {
+      background: transparent;
+      color: white;
+      border: 3px solid white;
+      padding: 54px 64px;
+      font-size: 30px;
+      font-weight: bold;  
+      border-radius: 20px;
+      cursor: pointer;
+      backdrop-filter: blur(10px) brightness(100%);
+
+      transition: 0.2s;
+    }
+
+    .download-btn:hover {
+      backdrop-filter: blur(10px) brightness(90%);
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+
+  <a href="Tpack-Zipped/OG_Bloxd.zip" download>
+    <button class="download-btn">Download The Tpack</button>
+  </a>
+
+</body>
+</html>
+
