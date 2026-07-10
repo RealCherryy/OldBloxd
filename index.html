@@ -1,52 +1,391 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>OG Bloxd</title>
-  
-<!-- Test website just to be easier to develop in it o_o -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    body {
-      margin: 0;
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background-image: url("Assets/Background-Image.png") ;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: cover;
-    }
+    <title>OG Bloxd</title>
 
-    .download-btn {
-      background: transparent;
-      color: white;
-      border: 3px solid white;
-      padding: 54px 64px;
-      font-size: 30px;
-      font-weight: bold;  
-      border-radius: 20px;
-      cursor: pointer;
-      backdrop-filter: blur(10px) brightness(100%);
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
-      transition: 0.2s;
-    }
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Sora", sans-serif;
+        }
 
-    .download-btn:hover {
-      backdrop-filter: blur(10px) brightness(90%);
-      transform: scale(1.05);
-    }
-  </style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #080808;
+            color: white;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            background: url("Assets/Background-Image.png") center center / cover;
+            filter: blur(14px);
+            opacity: 0.15;
+            transform: scale(1.1);
+            z-index: -2;
+        }
+
+        body::after {
+            content: "";
+            position: fixed;
+            inset: 0;
+            background: linear-gradient(#0009, #080808);
+            z-index: -1;
+        }
+
+        nav {
+            position: sticky;
+            top: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 8%;
+            backdrop-filter: blur(10px);
+            background: #1118;
+            border-bottom: 1px solid #ffffff14;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: 800;
+        }
+
+        .logo span {
+            color: #b33;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 24px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: #ddd;
+            text-decoration: none;
+        }
+
+        .btn {
+            background: #a73434;
+            color: white;
+            padding: 12px 22px;
+            border-radius: 12px;
+            text-decoration: none;
+        }
+
+        .hero {
+            display: grid;
+            grid-template-columns: 1.1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            padding: 80px 8%;
+            min-height: 90vh;
+        }
+
+        h1 {
+            font-size: clamp(3rem, 7vw, 5.8rem);
+            line-height: 1;
+        }
+
+        .accent {
+            color: #b33;
+        }
+
+        p {
+            color: #bbb;
+            line-height: 1.8;
+            margin: 24px 0;
+        }
+
+        .actions {
+            display: flex;
+            gap: 18px;
+            flex-wrap: wrap;
+        }
+
+        .actions a {
+            padding: 16px 28px;
+            border-radius: 14px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: 0.3s;
+        }
+
+        .primary {
+            background: #a73434;
+            color: white;
+        }
+
+        .secondary {
+            border: 1px solid #444;
+            color: white;
+        }
+
+        .actions a:hover,
+        .card:hover,
+        .preview:hover {
+            transform: translateY(-6px);
+        }
+
+        .preview {
+            overflow: hidden;
+            border-radius: 22px;
+            border: 1px solid #333;
+            box-shadow:
+                0 20px 60px #0008,
+                0 0 60px #a7343444;
+            transition: 0.3s;
+        }
+
+        .preview img {
+            display: block;
+            width: 100%;
+        }
+
+        section {
+            padding: 90px 8%;
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background: #101010cc;
+            border: 1px solid #252525;
+            border-radius: 18px;
+            padding: 30px;
+            transition: 0.3s;
+        }
+
+        .card h3 {
+            margin-bottom: 12px;
+        }
+
+        footer {
+            padding: 60px 8%;
+            text-align: center;
+            border-top: 1px solid #222;
+        }
+
+        .links {
+            display: flex;
+            justify-content: center;
+            gap: 18px;
+            flex-wrap: wrap;
+            margin: 25px 0;
+        }
+
+        .links a {
+            color: #ddd;
+            text-decoration: none;
+        }
+
+        .fade {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: 0.8s;
+        }
+
+        .show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (max-width: 900px) {
+            nav {
+                flex-direction: column;
+                gap: 16px;
+            }
+
+            .hero {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .actions {
+                justify-content: center;
+            }
+        }
+    </style>
 </head>
+
 <body>
 
-  <a href="Tpack-Zipped/OG_Bloxd.zip" download>
-    <button class="download-btn">Download The Tpack</button>
-  </a>
+    <nav>
+        <div class="logo">
+            OG <span>BLOXD</span>
+        </div>
+
+        <ul>
+            <li><a href="#texture">Texture Pack</a></li>
+            <li><a href="#client">Client</a></li>
+            <li><a href="YOUR_DISCORD_LINK" class="btn">Discord</a></li>
+        </ul>
+    </nav>
+
+    <div class="hero">
+
+        <div class="fade">
+            <h1>
+                Bring <span class="accent">OG Bloxd</span><br>
+                Back To Life.
+            </h1>
+
+            <p>
+                Experience Bloxd the way you remember it with classic textures,
+                better performance and a clean client.
+            </p>
+
+            <div class="actions">
+                <a class="primary" href="Tpack-Zipped/OG_Bloxd.zip" download>
+                    Download Texture Pack
+                </a>
+
+                <a class="secondary" href="CLIENT_LINK">
+                    Download Client
+                </a>
+            </div>
+        </div>
+
+        <div class="preview fade">
+            <img src="Assets/Background-Image.png" alt="OG Bloxd Preview">
+        </div>
+
+    </div>
+
+    <section id="texture">
+
+        <h2>Features</h2>
+
+        <div class="grid">
+
+            <div class="card fade">
+                <h3>⚔ Classic Textures</h3>
+                <p>Faithfully recreated nostalgic textures.</p>
+            </div>
+
+            <div class="card fade">
+                <h3>🚀 Lightweight Client</h3>
+                <p>Fast, smooth and optimized gameplay.</p>
+            </div>
+
+            <div class="card fade">
+                <h3>🎯 PvP Focused</h3>
+                <p>Cleaner visuals for competitive players.</p>
+            </div>
+
+            <div class="card fade">
+                <h3>❤️ Community</h3>
+                <p>Built by Bloxd players for Bloxd players.</p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <section id="client">
+
+        <h2>Downloads</h2>
+
+        <div class="grid">
+
+            <div class="card">
+                <h3>Texture Pack</h3>
+                <p>Install the latest OG Bloxd textures.</p>
+
+                <br>
+
+                <a class="btn" href="Tpack-Zipped/OG_Bloxd.zip">
+                    Download
+                </a>
+            </div>
+
+            <div class="card">
+                <h3>Client</h3>
+                <p>Coming soon.</p>
+
+                <br>
+
+                <a class="btn" href="CLIENT_LINK">
+                    Download
+                </a>
+            </div>
+
+        </div>
+
+    </section>
+
+    <footer>
+
+        <h2>OG Bloxd</h2>
+
+        <p>
+            Reviving the classic Bloxd experience.
+        </p>
+
+        <div class="links">
+            <a href="Tpack-Zipped/OG_Bloxd.zip">Texture Pack</a>
+            <a href="CLIENT_LINK">Client</a>
+            <a href="YOUR_DISCORD_LINK">Discord</a>
+        </div>
+
+        <p>
+            Made by Founder @RealCherryyy • Co-Owner @ge0rgecr_
+        </p>
+
+        <small>© 2026 OG Bloxd</small>
+
+    </footer>
+
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(link => {
+            link.onclick = event => {
+                const target = document.querySelector(link.getAttribute("href"));
+
+                if (target) {
+                    event.preventDefault();
+
+                    target.scrollIntoView({
+                        behavior: "smooth"
+                    });
+                }
+            };
+        });
+
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("show");
+                }
+            });
+        });
+
+        document.querySelectorAll(".fade").forEach(element => {
+            observer.observe(element);
+        });
+    </script>
 
 </body>
 </html>
-
